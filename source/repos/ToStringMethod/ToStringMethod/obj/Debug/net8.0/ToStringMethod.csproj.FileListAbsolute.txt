@@ -1,0 +1,14 @@
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\bin\Debug\net8.0\ToStringMethod.exe
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\bin\Debug\net8.0\ToStringMethod.deps.json
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\bin\Debug\net8.0\ToStringMethod.runtimeconfig.json
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\bin\Debug\net8.0\ToStringMethod.dll
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\bin\Debug\net8.0\ToStringMethod.pdb
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\obj\Debug\net8.0\ToStringMethod.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\obj\Debug\net8.0\ToStringMethod.AssemblyInfoInputs.cache
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\obj\Debug\net8.0\ToStringMethod.AssemblyInfo.cs
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\obj\Debug\net8.0\ToStringMethod.csproj.CoreCompileInputs.cache
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\obj\Debug\net8.0\ToStringMethod.dll
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\obj\Debug\net8.0\refint\ToStringMethod.dll
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\obj\Debug\net8.0\ToStringMethod.pdb
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\obj\Debug\net8.0\ToStringMethod.genruntimeconfig.cache
+C:\Users\gboluwaga.alamu\source\repos\ToStringMethod\ToStringMethod\obj\Debug\net8.0\ref\ToStringMethod.dll
