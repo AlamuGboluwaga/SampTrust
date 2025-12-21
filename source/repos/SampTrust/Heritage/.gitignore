@@ -1,0 +1,36 @@
+﻿# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Build output
+bin/
+obj/
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+
+# Logs
+*.log
+
+# Local databases
+*.db
+*.db-shm
+*.db-wal
+
+# Environment / secrets
+appsettings.Development.json
+appsettings.Local.json
+.env
+
+# VS Code / Rider
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,6 @@
+@Heritage_HostAddress = http://localhost:5034
+
+GET {{Heritage_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
