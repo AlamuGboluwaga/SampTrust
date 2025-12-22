@@ -9,7 +9,7 @@ namespace Heritage.Data
         public static async Task SeedData(AppDbContext context)
         {
             if (await context.Activities.AnyAsync())
-                return; // 👈 prevents duplicates
+                return; // 👈 prevents duplicate
 
             var activities = new List<Activity> {
             new() {
