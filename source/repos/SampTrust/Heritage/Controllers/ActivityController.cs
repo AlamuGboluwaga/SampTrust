@@ -2,16 +2,9 @@
 using Heritage.Model;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using static System.Runtime.InteropServices.JavaScript.JSType;
-using System;
-using System.Collections.Immutable;
-
-
-
 
 namespace Heritage.Controllers
 {
-
     public class ActivityController(AppDbContext context) : BaseController
     {
         private readonly AppDbContext dbData = context;
@@ -91,7 +84,7 @@ namespace Heritage.Controllers
             if(activity == null) return NotFound(); 
              dbData.Activities.Remove(activity);
             await dbData.SaveChangesAsync();
-            return Ok(new {message = "Activity successfully delete"});
+            return Ok(new {message = "Activity successfully deleted"});
         }
 
     }
