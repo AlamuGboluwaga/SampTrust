@@ -1,11 +1,13 @@
 ﻿using Heritage.Data;
+using Heritage.Data.Mediatr;
 using Heritage.Model;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Heritage.Controllers
 {
-    public class ActivityController(AppDbContext context) : BaseController
+    public class ActivityController(AppDbContext context, IMediator mediator) : BaseController
     {
         private readonly AppDbContext dbData = context;
         [HttpGet("GetAllActivities")]
@@ -14,9 +16,7 @@ namespace Heritage.Controllers
             try
             {
 
-                var result = await dbData.Activities.ToListAsync();
-
-                return result == null ? NotFound() : Ok(result);
+                return await mediator.Send(new GetActivityList.Query()); 
             }
             catch (Exception ex)
             {

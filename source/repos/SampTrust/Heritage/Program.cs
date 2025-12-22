@@ -1,4 +1,5 @@
 using Heritage.Data;
+using Heritage.Data.Mediatr;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -8,6 +9,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<AppDbContext>(opt =>
     opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddMediatR(x => x.RegisterServicesFromAssemblyContaining<GetActivityList>());
 
 var app = builder.Build();
 
