@@ -1,5 +1,5 @@
 using Heritage.Data;
-using Heritage.Data.Mediatr;
+using Heritage.Mediator.Queries;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
