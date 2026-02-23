@@ -1,13 +1,14 @@
 import { useForm } from "react-hook-form";
 import type { SubmitHandler } from "react-hook-form";
 import React, { useEffect, useState } from "react";
-import suntrustLogo from "../images/sun.png";
 import { useLoginMutation } from "../api/authApi";
 import Loader from "../component/Loader";
 import { toast } from "react-toastify";
 import { IoEyeOffOutline } from "react-icons/io5";
 import { TfiEye } from "react-icons/tfi";
-import PageTitle from "../component/PageTitle";
+import { useNavigate } from "react-router-dom";
+import Header from "../component/Header";
+import BankLogo from "../component/BankLogo";
 
 export type LoginFormData = {
   username: string;
@@ -15,11 +16,9 @@ export type LoginFormData = {
 };
 
 const Login: React.FC = () => {
-  // <PageTitle tittle="App-Supoort | Login" />;
-
   const [login, { data, error, isLoading }] = useLoginMutation();
   const [passwordView, setPasswordView] = useState(false);
-
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -33,12 +32,11 @@ const Login: React.FC = () => {
   useEffect(() => {
     document.title = "App-Supoort | Login Page";
     if (data?.responseCode === "98") {
-      console.log(data);
       toast.error(data?.responseDescription || "An error occurred");
     }
     if (data?.responseCode === "00") {
-      console.log(data);
       toast.success(data?.responseDescription || "Success");
+      navigate("/otpverificationpage");
     }
     if (error) {
       toast.error("An error occurred. Please try again.");
@@ -51,25 +49,17 @@ const Login: React.FC = () => {
   };
 
   return (
-    <div className="h-screen w-screen bg-black flex flex-col space-y-12 justify-center items-center text-white">
-      <div className="flex flex-row justify-center items-center space-x-6">
-        <img src={suntrustLogo} alt="" className="h-10" />
-        <h1 className=" font-bold ">App-support portal</h1>
-      </div>
+    <div className="authlayout">
+      <BankLogo />
 
       {/* Form */}
-      <div className=" h-[75%] w-[30%] bg-[#121413]  rounded-2xl text-gray-100 flex flex-col justify-center items-center ">
-        <div className="mt-[10%]  h-15 w-full flex flex-col justify-center items-center space-y-2">
-          <h1 className=" flex  font-bold text-xl  ">Login</h1>
-          <p className=" text-xs   text-gray-300 ">
-            Enter the correct login details in the fields below
-          </p>
-        </div>
+      <div className="formDiv">
+        <Header
+          headerName="Login"
+          message="Enter the correct login details in the fields below"
+        />
 
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className="h-[80%] w-full  flex flex-col justify-center items-center "
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className="form">
           <div className=" h-full w-full  flex flex-col justify-center items-center space-y-3 ">
             <div className="w-[80%]">
               <div className=" w-full ">
@@ -106,7 +96,7 @@ const Login: React.FC = () => {
                 <input
                   className="h-full w-full border  border-none pl-4 "
                   type={passwordView ? "text" : "password"}
-                  {...register("password")}
+                  {...register("password", { required: true })}
                   placeholder="Password"
                 />
               </div>
@@ -117,9 +107,10 @@ const Login: React.FC = () => {
                 {passwordView ? <TfiEye /> : <IoEyeOffOutline />}
               </div>
               <div className="text-xs  w-[80%]  text-red-700 ">
-                {errors.username && <span>This field is required</span>}
+                {errors.password && <span>This field is required</span>}
               </div>
             </div>
+            {/* Button */}
             <div className="w-[80%]">
               <div
                 className={`h-12 w-full  rounded mt-10 ${isLoading ? "bg-[#bbbdc0]" : "bg-[#4a5565]"} `}

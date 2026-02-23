@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+.authlayout {
+  @apply h-screen w-screen bg-black flex flex-col space-y-12 justify-center items-center text-white
+}
+.header {
+    @apply font-bold 
+}
+.formDiv {
+  @apply h-[75%] w-[30%] bg-[#121413] rounded-2xl text-gray-100 flex flex-col justify-center items-center 
+}
+
+.form{
+@apply h-[80%] w-full  flex flex-col justify-center items-center
+}

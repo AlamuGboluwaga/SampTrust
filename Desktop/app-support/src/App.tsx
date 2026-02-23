@@ -11,7 +11,7 @@ function App() {
       <Routes>
         {/* <Route path="/STBAppsuppot/login" element={<Login />} /> */}
         <Route path="/" element={<Login />} />
-        <Route path="/otpverification" element={<OTPVerification />} />
+        <Route path="/otpverificationpage" element={<OTPVerification />} />
       </Routes>
     </>
   );

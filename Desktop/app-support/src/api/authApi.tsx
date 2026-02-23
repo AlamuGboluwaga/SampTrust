@@ -49,6 +49,6 @@ export const authApi = createApi({
 // Export hooks for components
 export const {
   useLoginMutation,
-  // useVerifyOtpMutation,
+  useVerifyOtpMutation,
   // useResendOtpMutation
 } = authApi;
