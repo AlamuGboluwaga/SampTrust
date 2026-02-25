@@ -27,6 +27,8 @@ const Login: React.FC = () => {
 
   const onSubmit: SubmitHandler<LoginFormData> = (formData) => {
     login(formData);
+    sessionStorage.setItem("username", formData?.username);
+    
   };
 
   useEffect(() => {
@@ -101,7 +103,7 @@ const Login: React.FC = () => {
                 />
               </div>
               <div
-                className=" absolute bottom-[34%] right-[39%] mr-2  cursor-pointer"
+                className=" absolute bottom-[35.6%] right-[39%] mr-2  cursor-pointer"
                 onClick={handlePasswordView}
               >
                 {passwordView ? <TfiEye /> : <IoEyeOffOutline />}

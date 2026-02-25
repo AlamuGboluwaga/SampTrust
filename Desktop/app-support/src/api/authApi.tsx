@@ -1,5 +1,6 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import type { LoginFormData } from "../pages/Login";
+import type { OTPVerificationtype } from "../pages/OTPVerification";
 
 export interface ResponseData {
   responseCode: string;
@@ -10,7 +11,11 @@ export interface ResponseData {
     status: string;
   };
 }
-
+export interface ResponseOtp {
+  responseCode: string;
+  responseDescription: string;
+  data: string;
+}
 export const authApi = createApi({
   reducerPath: "authApi",
   baseQuery: fetchBaseQuery({
@@ -27,12 +32,14 @@ export const authApi = createApi({
     }),
 
     // Verify OTP mutation
-    verifyOtp: builder.mutation({
-      query: (otpData) => ({
-        url: '/Auth/verify-otp',
-        method: 'POST',
-        body: otpData
-      })
+    verifyOtp: builder.mutation<ResponseOtp, OTPVerificationtype>({
+      query: (otpData) => (
+        {
+          url: "/Auth/verify-otp",
+          method: "POST",
+          body: otpData,
+        }
+      ),
     }),
 
     //     // Resend OTP mutation
